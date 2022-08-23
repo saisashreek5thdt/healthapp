@@ -47,7 +47,7 @@ const Dashboard = () => {
                         </div>
                         <div className="dashboard__Navbar--Container">
                           <div className="dashboard__Navbar--Tabs">
-                            {navigation.map((item) => (
+                            {/* {navigation.map((item) => (
                               <a
                                 key={item.name}
                                 href={item.href}
@@ -61,7 +61,12 @@ const Dashboard = () => {
                               >
                                 {item.name}
                               </a>
-                            ))}
+                            ))} */}
+                            <a href="/" className="dashboard__Navbar--Tab-Items dashboard__Navbar--Tab-Items-Active">Dashboard</a>
+                            <a href="/" className="dashboard__Navbar--Tab-Items dashboard__Navbar--Tab-Items-Hover">Team</a>
+                            <a href="/" className="dashboard__Navbar--Tab-Items dashboard__Navbar--Tab-Items-Hover">Projects</a>
+                            <a href="/" className="dashboard__Navbar--Tab-Items dashboard__Navbar--Tab-Items-Hover">Calendar</a>
+                            <a href="/" className="dashboard__Navbar--Tab-Items dashboard__Navbar--Tab-Items-Hover">Reports</a>
                           </div>
                         </div>
                       </div>
@@ -103,8 +108,8 @@ const Dashboard = () => {
                                       <a
                                         href={item.href}
                                         className={classNames(
-                                          active ? "bg-gray-100" : "",
-                                          "block px-4 py-2 text-sm text-gray-700"
+                                          active ? "dashboard__Menu--Profile-Item-Active" : "",
+                                          "dashboard__Menu--Profile-Item"
                                         )}
                                       >
                                         {item.name}
@@ -123,12 +128,12 @@ const Dashboard = () => {
                           <span className="sr-only">Open main menu</span>
                           {open ? (
                             <XIcon
-                              className="block h-6 w-6"
+                              className="dashboard__MenuMobile--Icon"
                               aria-hidden="true"
                             />
                           ) : (
                             <MenuIcon
-                              className="block h-6 w-6"
+                              className="dashboard__MenuMobile--Icon"
                               aria-hidden="true"
                             />
                           )}
@@ -156,38 +161,38 @@ const Dashboard = () => {
                         </Disclosure.Button>
                       ))}
                     </div>
-                    <div className="pt-4 pb-3 border-t border-gray-700">
-                      <div className="flex items-center px-5">
-                        <div className="flex-shrink-0">
+                    <div className="dashboard__Menu--Profile-Box">
+                      <div className="dashboard__Menu--Profile-FlexBox">
+                        <div className="dashboard__Menu--Profile-FlexBox_Img">
                           <img
-                            className="h-10 w-10 rounded-full"
+                            className="dashboard__Menu--Profile-FlexBox_ImgBox"
                             src={user.imageUrl}
                             alt=""
                           />
                         </div>
-                        <div className="ml-3">
-                          <div className="text-base font-medium leading-none text-white">
+                        <div className="dashboard__Menu--Profile_Info">
+                          <div className="dashboard__Menu--Profile_Info-Name">
                             {user.name}
                           </div>
-                          <div className="text-sm font-medium leading-none text-gray-400">
+                          <div className="dashboard__Menu--Profile_Info-Email">
                             {user.email}
                           </div>
                         </div>
                         <button
                           type="button"
-                          className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                          className="dashboard__Menu--Profile_Button"
                         >
                           <span className="sr-only">View notifications</span>
                           <BellIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
                       </div>
-                      <div className="mt-3 px-2 space-y-1">
+                      <div className="dashboard__Menu--Profile-Container">
                         {userNavigation.map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                            className="dashboard__Menu--Profile-Nav"
                           >
                             {item.name}
                           </Disclosure.Button>
