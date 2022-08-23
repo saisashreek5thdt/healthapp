@@ -4,3 +4,6 @@ $primary-font-size: 24px;
 .main {
     font-size: $primary-font-size;
 }
+
+@import 'Login';
+@import 'Dashboard';

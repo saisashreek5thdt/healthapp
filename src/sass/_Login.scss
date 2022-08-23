@@ -1,0 +1,33 @@
+.login {
+    @apply bg-gray-50 max-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8;
+
+    &__Container {
+        @apply max-w-md w-full space-y-8;
+    }
+
+    &__Image {
+        @apply mx-auto h-12 w-auto;
+    }
+
+    &__Heading {
+        @apply mt-6 text-center text-3xl tracking-tight font-bold text-gray-900;
+    }
+
+    &__Form--Controller {
+        @apply mt-8 space-y-6 #{!important};
+    }
+
+    &__Form--Input[type="email"], &__Form--Input[type="password"] {
+        @apply appearance-none rounded-none relative block w-full px-3 py-2 my-6 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm #{!important};
+    }
+
+    &__Form--Remember[type="checkbox"] {
+        @apply h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded #{!important};
+    }
+
+    &__Form--Remember-Label {
+        @apply ml-2 block text-sm text-gray-900 #{!important};
+    }
+
+}
+
